@@ -22,4 +22,11 @@ VPD (Vapor Pressure Deficit) and minimizing the chance for powdery mildew.  The 
 # VPD Buddy
 
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vTjks0iZHIZyD4VEdOo01_se0jn_CgJu9JUCee-rUhXBmFfykmObBkpqSUFBkOvnIdisiIzygPvDeZa/pub?w=599&amp;h=332">
+
+- SnifferBuddy takes a reading
+
 - mqtt is used as an API between devices and UI.  This way, any front end and any back end component can be evolved but still work within the system.  I look forward to evolution because at each stage it becomes more shockingly obvious I don't know what I'm doing.
+- I decided to just set everything to work in Fahrenheight instead of Celcius for Temperature readings.  This is mostly because Fahrenheit is ingrained in my thinking (for worse or better).
+
+# Managing Irrigation
+Another thing to dial in is irrigation.  My strategy is to use Blumats.  To dial in the opening/closing of the Blumat valve, the soil the Blumat system will irrigate needs to be at the ideal wetness.  To do that, I'll calibrate some wifi enabled soil moisture sensors
