@@ -9,12 +9,12 @@ Features of my indoor grow environment which make my solution unique:
 - LED Lights.
 # System Overview
 ## VPD Buddy
-VPD Buddy adjusts the humidity to ideal VPD ranges for the given growth stage the plants are in.
+__VPD Buddy__ adjusts the humidity to ideal VPD ranges for the given growth stage the plants are in.
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vTjks0iZHIZyD4VEdOo01_se0jn_CgJu9JUCee-rUhXBmFfykmObBkpqSUFBkOvnIdisiIzygPvDeZa/pub?w=599&amp;h=332">
 
 VPD Buddy includes:
 
-    - [SnifferBuddy](https://github.com/solarslurpi/GrowBuddy/blob/main/pages/SNIFFER_BUDDY.md) takes CO2 level, temperature, and humidity readings.  I will use the same SnifferBuddy I used last time.  It sends an mqtt message `tele/snifferbuddy/SENSOR` handled by the `growbuddy` broker with the payload `{"Time":"2022-09-06T08:52:59","ANALOG":{"A0":542},"SCD30":{"CarbonDioxide":814,"eCO2":787,"Temperature":71.8,"Humidity":61.6,"DewPoint":57.9},"TempUnit":"F"}` every twenty seconds. 
+    - [__SnifferBuddy__](https://github.com/solarslurpi/GrowBuddy/blob/main/pages/SNIFFER_BUDDY.md) takes CO2 level, temperature, and humidity readings.  I will use the same SnifferBuddy I used last time.  It sends an mqtt message `tele/snifferbuddy/SENSOR` handled by the `growbuddy` broker with the payload `{"Time":"2022-09-06T08:52:59","ANALOG":{"A0":542},"SCD30":{"CarbonDioxide":814,"eCO2":787,"Temperature":71.8,"Humidity":61.6,"DewPoint":57.9},"TempUnit":"F"}` every twenty seconds. 
  ![snifferbuddy mqtt](images/mqttexplorer_snifferbuddy.jpg)   
             [MQTT Explorer](http://mqtt-explorer.com/) showing snifferbuddy messages.
     
