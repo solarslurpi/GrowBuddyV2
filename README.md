@@ -33,7 +33,7 @@ The VPD Controller reads in the setpoint values for the VPD given the growth sta
     - Controller that adjusts the humidity to ideal VPD ranges for the given growth stage the plants are in.
     - humidifier that is plumbed to be autofilled and responds to on/off requests from the Controller.
 # Actuator
-The ___Actuator code__ turn on and off the humidifier.  _Note: This could be modified to actuate other devices, like a dehumidifier, heater, cooler, ...
+The ___Actuator code__ turn on and off the humidifier.  _Note: This could be modified to actuate other devices, like a dehumidifier, heater, cooler, ..././
 
 # Goals
 - Collect data for historical use.  Not for adjustments.  The VPD is "set and forget".  If there is a problem, VPD 
