@@ -32,15 +32,14 @@ The VPD Controller reads in the setpoint values for the VPD given the growth sta
     - Uses a PID controller to return the number of seconds the humidifier should be turned on to get to the setpoint.  
     - Controller that adjusts the humidity to ideal VPD ranges for the given growth stage the plants are in.
     - humidifier that is plumbed to be autofilled and responds to on/off requests from the Controller.
-# Actuator
-The __Actuator code__ turn on and off the humidifier.  _Note: This could be modified to actuate other devices, like a dehumidifier, heater, cooler, .._
+
 # Goals
-- Collect data for historical use.  Not for adjustments.  The VPD is "set and forget".  If there is a problem, VPD 
+- Collect data for historical use.  Not for adjustments.  The VPD is "set and forget". 
 
 # VPD Buddy
 
 
-
+# TODO
 
 # Managing Irrigation
 Another thing to dial in is irrigation.  My strategy is to use Blumats.  To dial in the opening/closing of the Blumat valve, the soil the Blumat system will irrigate needs to be at the ideal wetness.  To do that, I'll calibrate some wifi enabled soil moisture sensors
