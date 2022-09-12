@@ -1,5 +1,5 @@
 # Welcome
-I am passionate about optimizing grow room automation in my indoor home grow.  As the grows go by, I learn.  I think about what I can optimize.  My current obsession is optimizing VPD.  I am not building a generic solution because I don't need one.  My indoor grow:
+I am passionate about optimizing grow room automation in my indoor home grow.  As the grows go by, I learn.  I think about what I can optimize.  __My current obsession is optimizing my plant's water needs, both in the form of water vapor as well as irrigation__ .  I am not building a generic solution because I don't need one.  My indoor grow:
 - is in my kitchen in the same climate controlled environment I live in.  The temperature is typically around 70℉ and the humidity runs around 50%.  With the LEDs on, the grow tent environment is a few degrees higher.  Given an above day temperature of 70 ℉ or above, I will only adjust humidity.  Since the humidity is moderately low, I will use a humidifier but not a dehumidifier.
 - is a bed of living soil.  Perhaps unusual to have a bed of soil in a kitchen, but I can't stop thinking about happy microbes.
 
