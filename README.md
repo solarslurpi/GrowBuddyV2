@@ -1,5 +1,5 @@
 # Sources
-- [YouTube video that I found best explained water vapor, temperature's relationship to Relative Humidity, and VPD](https://www.youtube.com/watch?v=-bYPGr1TJQY&t=1s).  The concept of VPD
+- [YouTube video that I found best explained water vapor, temperature's relationship to Relative Humidity, and VPD](https://www.youtube.com/watch?v=-bYPGr1TJQY&t=1s).  
 # Welcome
 My indoor plants are a huge source of joy during the dark and rainy winter months.  That is why I continually evolve my grow room automation.  If I don't automate some of the indoor grow tasks, I become chained to my grow.  I can't go on vacation because the plants need watering...it's hard dialing in the temperature and humidity...As the grows go by, I learn. Automation has meant healthier plants that produce more yield. Automation means I can enjoy the plants and spend more time looking for diseases or pests.  __My current obsession is optimizing my plant's water needs, both in the form of water vapor as well as irrigation__ .  I am not building a generic solution because I don't need one.  My indoor grow:
 - is in my kitchen in the same climate controlled environment I live in.  The temperature is typically around 70℉ and the humidity runs around 50%.  With the LEDs on, the grow tent environment is a few degrees higher.  Given an above day temperature of 70 ℉ or above, I will only adjust humidity.  Since the humidity is moderately low, I will use a humidifier but not a dehumidifier.
@@ -31,11 +31,12 @@ The VPD Controller reads in the setpoint values for the VPD given the growth sta
 
 ![Pulse VPD ranges](https://cdn.shopify.com/s/files/1/2451/2393/files/VPD_Stages_Card-Recovered_600x600.jpg)
 ## VPD Manager
-- __VPD Manager__ for Managing the Amount of Water Vapor:
+__VPD Manager__ manages the amount of Water Vapor:
     - Subscribes to the SnifferBuddy (mqtt) messages to get the environment's temperature and humidity.
     - Uses a PID controller to return the number of seconds the humidifier should be turned on to get to the setpoint.  
-    - Sets up a callback that returns the date and time a reading was taken, the CO2 level, air temperature, RH (Relative Humidity), and VPD
+    - Sets up a callback that returns the date and time a reading was taken, the CO2 level, air temperature, RH (Relative Humidity), and VPD.
 ## VPD Buddy
+At this point, __VPD Buddy__ is Python code that ties everything together.  Over time, this could expand into a User Interface.  
 
 # Goals
 - Collect data for historical use.  Not for adjustments.  The VPD is "set and forget". 
