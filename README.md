@@ -35,6 +35,12 @@ __VPD Manager__ manages the amount of Water Vapor:
     - Subscribes to the SnifferBuddy (mqtt) messages to get the environment's temperature and humidity.
     - Uses a PID controller to return the number of seconds the humidifier should be turned on to get to the setpoint.  _Note: I wish I had folks who could evaluate this code.  This is my first PID controller.  
     - Sets up a callback that returns the date and time a reading was taken, the CO2 level, air temperature, RH (Relative Humidity), and VPD.
+## Humidifier
+I couldn't find a humidifier that I could easily automate refilling the tank as well as providing strong enough water vapor to fill the grow tent.  So I made one.
+### BoM
+- [Storage Tote from Home Depot](https://www.homedepot.com/p/HDX-14-Gal-Tough-Storage-Tote-in-Black-with-Yellow-Lid-SW111/314468098).
+- [2 in. PVC Pipe from Home Depot](https://www.homedepot.com/p/JM-EAGLE-2-in-x-10-ft-White-PVC-Schedule-40-DWV-Plain-End-Pipe-531137/100161954)
+- [2 in. PVC 90° elbow](https://www.homedepot.com/p/Charlotte-Pipe-2-in-PVC-DWV-90-Degree-Hub-x-Hub-Elbow-PVC003001000HD/203393418)
 ## VPD Buddy
 At this point, __VPD Buddy__ is Python code that ties everything together.  Over time, this could expand into a User Interface.  
 
