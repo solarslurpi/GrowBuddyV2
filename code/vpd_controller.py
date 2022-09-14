@@ -3,6 +3,7 @@ import json
 import math
 import os
 import logging
+import threading
 
 import paho.mqtt.client as mqtt
 from logging_handler import LoggingHandler
@@ -17,11 +18,10 @@ class growthStage(Enum):
 
 class VPDcontroller():
     '''Keep the Vaper Pressure Deficit at an ideal level'''
-    def __init__(self, growth_stage = growthStage.BABY, values_callback=None,pid_callaback=None,log_level=logging.DEBUG):
+    def __init__(self, growth_stage = growthStage.BABY, values_callback=None,log_level=logging.DEBUG):
         # Used for initialization of PID controller when the first mqtt message from SnifferBuddy comes in.
         self.first_message = True
         self.values_callback = values_callback
-        self.pid_callback = pid_callaback
 
         # Set up logging to go to the console.
         self.logger = LoggingHandler(log_level)
@@ -53,13 +53,13 @@ class VPDcontroller():
 
         # Connect up with mqtt.
         try:
-            client = mqtt.Client('vpdBuddy')
-            client.on_message = self._on_message
-            client.on_connect = self._on_connect
-            client.connect(self.settings['mqtt_broker'])
+            self.client = mqtt.Client('vpdBuddy')
+            self.client.on_message = self._on_message
+            self.client.on_connect = self._on_connect
+            self.client.connect(self.settings['mqtt_broker'])
             # At this point, mqtt drives the code.
             self.logger.debug('VPDcontroller has been initialized.  Handing over to mqtt.')
-            client.loop_forever()
+            self.client.loop_forever()
 
 
         except Exception as e:
@@ -118,10 +118,10 @@ class VPDcontroller():
         if self.values_callback:
             self.values_callback(time,air_T, RH, vpd)
 
-        nSeconds = self._pid(self.setpoint,vpd)
-        self.logger.debug(f'vpd: {vpd}   num seconds to turn humidifier on: {nSeconds}')
-        if self.pid_callback:
-            self.pid_callback(nSeconds)
+        nSecondsON = self._pid(self.setpoint,vpd)
+        self.logger.debug(f'vpd: {vpd}   num seconds to turn humidifier on: {nSecondsON}')
+        if nSecondsON > 0:
+            self._turn_on_humidifier(nSecondsON)
 
     
     def _calc_vpd(self,msg_str) -> (float):
@@ -165,7 +165,14 @@ class VPDcontroller():
 
 
 
+    def _turn_on_humidifier(self,nSecondsON):
+       
+        # Set up a callback to send an OFF message after the humidifier has been on nSecondsON
+        timer = threading.Timer(nSecondsON,self._turn_off_humidifier)
+        self.client.publish("cmnd/plug_humidifier_fan/POWER","ON")
+        self.logger.debug(f'-> humidifier turned on for {nSecondsON} seconds.')
+        timer.start()
 
-
-
-
+    def _turn_off_humidifier(self):
+        self.client.publish('cmnd/plug_humidifier_fan/POWER',"OFF")
+        self.logger.debug('-> _turn_off_humidifer')

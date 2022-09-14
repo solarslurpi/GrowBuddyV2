@@ -17,13 +17,9 @@ def values_callback(time,temp,RH,vpd):
     print(TYELLOW + f'Time is {time} Temperature is: {temp}℉   Relative Humidity is: {RH}% and vpd is: {vpd}'+TORIGINAL)
     # TODO: Store in influxdb
 
-def pid_callback(numSeconds):
-    print(TYELLOW + f'num seconds: {numSeconds}' + TORIGINAL)
-    # TODO: Turn humidifier on and off.
 
 
 if __name__ == '__main__':
     # Once VPDController spins up mqtt, there is nothing to call.  values_callback is
-    # called back to return readings.  pid_callback is called back to return the
-    # number of seconds to turn the humidifier on.
-    VPDcontroller(growthStage.BABY, values_callback,pid_callback,logging.DEBUG)
+    # called back to return readings. 
+    VPDcontroller(growthStage.BABY, values_callback,logging.DEBUG)

@@ -39,8 +39,16 @@ __VPD Manager__ manages the amount of Water Vapor:
 I couldn't find a humidifier that I could easily automate refilling the tank as well as providing strong enough water vapor to fill the grow tent.  So I made one.
 ### BoM
 - [Storage Tote from Home Depot](https://www.homedepot.com/p/HDX-14-Gal-Tough-Storage-Tote-in-Black-with-Yellow-Lid-SW111/314468098).
-- [2 in. PVC Pipe from Home Depot](https://www.homedepot.com/p/JM-EAGLE-2-in-x-10-ft-White-PVC-Schedule-40-DWV-Plain-End-Pipe-531137/100161954)
-- [2 in. PVC 90° elbow](https://www.homedepot.com/p/Charlotte-Pipe-2-in-PVC-DWV-90-Degree-Hub-x-Hub-Elbow-PVC003001000HD/203393418)
+- [2 in. PVC Pipe from Home Depot](https://www.homedepot.com/p/JM-EAGLE-2-in-x-10-ft-White-PVC-Schedule-40-DWV-Plain-End-Pipe-531137/100161954).
+- [2 in. PVC 90° elbow](https://www.homedepot.com/p/Charlotte-Pipe-2-in-PVC-DWV-90-Degree-Hub-x-Hub-Elbow-PVC003001000HD/203393418).
+- [Mist maker from Aliexpress](https://www.aliexpress.com/item/3256803543458943.html?spm=a2g0o.order_list.0.0.57dd1802LzMQr6) It comes with a 48V power supply.
+- Fan from a PC.  We have an electronics parts store near me that has a box full of PC fans.  The one I am using is quite strong, running at 24V.
+- 24V power supply to power the fan.
+- Two Sonoff S31 plugs that have been [Tasmotized](https://github.com/solarslurpi/GrowBuddy/blob/main/pages/flashing_SONOFF_S31.md). I bought a [pack of four from Amazon](https://amzn.to/3xnPWYc).
+
+<img src="https://docs.google.com/drawings/d/e/2PACX-1vQUxleGbz2HO3s0nvSM2fGetaqMWlghSMYW04w_cCPJjlJhYu8eZQOk7WLpPhxKHSE_uV4UvpYTMAMO/pub?w=599&amp;h=332">
+
+The VPD controller sends an mqtt message to both the tasmotized Sonos plug that the humidifier's fan is plugged into as well the Sonos plug that the humidifier's misters is plugged into. 
 ## VPD Buddy
 At this point, __VPD Buddy__ is Python code that ties everything together.  Over time, this could expand into a User Interface.  
 
