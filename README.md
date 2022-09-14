@@ -33,7 +33,7 @@ The VPD Controller reads in the setpoint values for the VPD given the growth sta
 ## VPD Manager
 __VPD Manager__ manages the amount of Water Vapor:
     - Subscribes to the SnifferBuddy (mqtt) messages to get the environment's temperature and humidity.
-    - Uses a PID controller to return the number of seconds the humidifier should be turned on to get to the setpoint.  
+    - Uses a PID controller to return the number of seconds the humidifier should be turned on to get to the setpoint.  _Note: I wish I had folks who could evaluate this code.  This is my first PID controller.  
     - Sets up a callback that returns the date and time a reading was taken, the CO2 level, air temperature, RH (Relative Humidity), and VPD.
 ## VPD Buddy
 At this point, __VPD Buddy__ is Python code that ties everything together.  Over time, this could expand into a User Interface.  
