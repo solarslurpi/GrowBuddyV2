@@ -49,6 +49,11 @@ I couldn't find a humidifier that I could easily automate refilling the tank as 
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vQUxleGbz2HO3s0nvSM2fGetaqMWlghSMYW04w_cCPJjlJhYu8eZQOk7WLpPhxKHSE_uV4UvpYTMAMO/pub?w=599&amp;h=332">
 
 The VPD controller sends an mqtt message to both the tasmotized Sonos plug that the humidifier's fan is plugged into as well the Sonos plug that the humidifier's misters is plugged into. 
+![mqtt plug publish on or off](images/mqtt_explorer_plug_humidifier_mister_console.jpg)
+The above images used MQTT explorer to test sending an ON and OFF message to the plug_humidifier_mister topic on the growbuddy broker.
+
+
+
 ## VPD Buddy
 At this point, __VPD Buddy__ is Python code that ties everything together.  Over time, this could expand into a User Interface.  
 
