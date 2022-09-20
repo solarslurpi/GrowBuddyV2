@@ -75,7 +75,3 @@ I will continue to use the carrots for water valve control.
 In the discussion above, I noted how I had been using Blumat's soil moisture tensiometer and the challenges I had in it's use.  This time, I will try setting up the soil moisture for the carrots with the Blumat soil moisture sensor.  Then use a simple capacitative touch sensor with wifi to monitor that the carrots are opening and closing the water valves correctly.
 
 
-
-
-
-To dial in the opening/closing of the Blumat valve, the soil the Blumat system will irrigate needs to be at the ideal wetness.  To do that, I'll calibrate some wifi enabled soil moisture sensors
