@@ -44,7 +44,6 @@ I couldn't find a humidifier that I could easily automate refilling the tank as 
 ![aliexpress 12 head mist maker](images/aliexpress12headmister.jpg)
 The one I got specifies a 48VDC power source rated at 350W.  Looking at Power(P) = Voltage(V)*Current(I), I'm interested in how much current is needed. I = 350W/48VDC = 7.3 Amps.  Which is a significant amount!  I had a 48V 250W power supply that I am using which works.  In fact, it is overkill for my space!
 - Fan from a PC.  We have an electronics parts store near me that has a box full of PC fans.  The one I am using is quite strong, running at 24V.
-- 24V power supply to power the fan.
 - Two Sonoff S31 plugs that have been [Tasmotized](https://github.com/solarslurpi/GrowBuddy/blob/main/pages/flashing_SONOFF_S31.md). I bought a [pack of four from Amazon](https://amzn.to/3xnPWYc).
 
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vQUxleGbz2HO3s0nvSM2fGetaqMWlghSMYW04w_cCPJjlJhYu8eZQOk7WLpPhxKHSE_uV4UvpYTMAMO/pub?w=599&amp;h=332">
@@ -61,10 +60,22 @@ At this point, __VPD Buddy__ is Python code that ties everything together.  Over
 # Goals
 - Collect data for historical use.  Not for adjustments.  The VPD is "set and forget". 
 
-# VPD Buddy
-
-
-# TODO
-
 # Managing Irrigation
-Another thing to dial in is irrigation.  My strategy is to use Blumats.  To dial in the opening/closing of the Blumat valve, the soil the Blumat system will irrigate needs to be at the ideal wetness.  To do that, I'll calibrate some wifi enabled soil moisture sensors
+Another thing to dial in is irrigation.  My strategy is to use Blumats.  
+![blumate moisture sensor](images/blumat_moisture_sensor.jpg)
+
+I used Blumats in my previous yield.  It makes sense to me that being able to measure the water tension around the ceramic is a superb way of dialing in soil moisture.  But Blumats require a level of expertise I am still acquiring. A challenge was knowing if the ceramic carrots were correctly placed in the soil.  It is too easy to accidentally bump a carrot, or place it where there is a stone that lets air in between the ceramic and the soil.  The biggest challenge I have is with the [moisture sensor](https://www.sustainablevillage.com/blumat-digital-moisture-meter?quantity=1).  Challenges:
+- it is not hooked up to the wifi.  This means to get a ready, I have to go to the device and "disturb" it.
+- by "disturb" I mean I have to push a button and then try to read poorly lit LED digits.  This is made a bigger challenge due to my less than ideal eyesight.
+- This disturbance has knocked the sensor enough such that the ceramic no longer has the connection to the soil.  When this happens, the readings do not reflect the soil.  This happened more than I would like.  So I compromised.
+
+## Water Valve Control
+I will continue to use the carrots for water valve control.
+## Validating the soil moisture
+In the discussion above, I noted how I had been using Blumat's soil moisture tensiometer and the challenges I had in it's use.  This time, I will try setting up the soil moisture for the carrots with the Blumat soil moisture sensor.  Then use a simple capacitative touch sensor with wifi to monitor that the carrots are opening and closing the water valves correctly.
+
+
+
+
+
+To dial in the opening/closing of the Blumat valve, the soil the Blumat system will irrigate needs to be at the ideal wetness.  To do that, I'll calibrate some wifi enabled soil moisture sensors
