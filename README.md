@@ -1,5 +1,6 @@
 # Sources
 - [YouTube video that I found best explained water vapor, temperature's relationship to Relative Humidity and VPD](https://www.youtube.com/watch?v=-bYPGr1TJQY&t=1s).  
+- [YouTube video introducing InfluxDB](https://www.youtube.com/watch?v=Vq4cDIdz_M8&list=RDCMUC4Snw5yrSDMXys31I18U3gg&index=2). This is the database I use on the GrowBuddy Raspberry Pi Server that coordinates with everyone in the GrowBuddy environment.
 # Evolving Grow Tent Automation
 My indoor plants are a huge source of joy during the dark and rainy winter months.  That is why I continually evolve my grow tent automation.  If I don't automate some of the indoor grow tasks, I become chained to my grow.  I can't go on vacation because the plants need watering...it's hard dialing in the temperature and humidity...As the grows go by, I learn. Automation has meant healthier plants that produce more yield. Automation means I can enjoy the plants and spend more time looking for diseases or pests.  __My current obsession is optimizing my plant's water needs, both in the form of water vapor as well as irrigation__ .  I am not building a generic solution because I don't need one.  My indoor grow:
 - is in my kitchen in the same climate controlled environment I live in.  The temperature is typically around 70℉ and the humidity runs around 50%.  With the LEDs on, the temperature is a few degrees higher.  Given an above day temperature of 70 ℉ or above, I will only adjust humidity.  Since the humidity is moderately low, I will use a humidifier but not a dehumidifier.
@@ -74,4 +75,5 @@ I will continue to use the carrots for water valve control.
 ## Validating the soil moisture
 In the discussion above, I noted how I had been using Blumat's soil moisture tensiometer and the challenges I had in it's use.  This time, I will try setting up the soil moisture for the carrots with the Blumat soil moisture sensor.  Then use a simple capacitative touch sensor with wifi to monitor that the carrots are opening and closing the water valves correctly.
 
-
+## Saving Readings
+I have influxdb]= installed on the Growbuddy Raspberry Pi Server.
