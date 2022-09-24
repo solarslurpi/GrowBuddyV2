@@ -70,10 +70,25 @@ I used Blumats in my previous yield.  It makes sense to me that being able to me
 - by "disturb" I mean I have to push a button and then try to read poorly lit LED digits.  This is made a bigger challenge due to my less than ideal eyesight.
 - This disturbance has knocked the sensor enough such that the ceramic no longer has the connection to the soil.  When this happens, the readings do not reflect the soil.  This happened more than I would like.  So I compromised.
 
-## Water Valve Control
-I will continue to use the carrots for water valve control.
-## Validating the soil moisture
-In the discussion above, I noted how I had been using Blumat's soil moisture tensiometer and the challenges I had in it's use.  This time, I will try setting up the soil moisture for the carrots with the Blumat soil moisture sensor.  Then use a simple capacitative touch sensor with wifi to monitor that the carrots are opening and closing the water valves correctly.
+## Water Valve Control and Monitoring.
+I will continue to use the carrots for water valve control.  Because the Blumat soil sensor is extremely sensitive to movement and is not wifi enabled, I am monitoring how well the valve is working with a [simple capacitative touch moisture sensor](https://www.aliexpress.us/item/2251832677402870.html?isdl=y&albslr=220352482&src=bing&gatewayAdapt=glo2usa4itemAdapt&_randl_shipto=US) that I have had for awhile.
+## Calibrating the Readings
+The capacitative touch moisture sensor needs to be calibrated to the Blumat moisture sensor.
+### How the Blumat Soil Moisture sensor works
+The Blumat Soil Moisture sensor is a tensiometer.  This seems so natural to me.  Figure out how much stress is on the roots when they are trying to suck water from the soil. 
+([thanks to this post for a good description of how a tensiometer measures soil moisture](https://ucanr.edu/blogs/blogcore/postdetail.cfm?postnum=30042))
+
+_What is tension? Tensiometers measure soil moisture in units of negative pressure also known as tension.  Tension is a measure of the force that plant roots need to exert to pull water from the soil pores.  Large pores hold water with less force than small pores.  As plants extract moisture from the soil, water is first taken up from the largest pores.  As the soil dries roots need to exert more force to pull water from the smaller pores.  Hence, high tension values mean that the soil is becoming dry._
+
+_How do tensiometers work? Tensiometers are filled with water (preferably distilled) that has been degassed by boiling.  A key component of the tensiometer is a porous ceramic cup which allows water in the shaft of the tensiometer to freely pass into the soil without air bleeding though the small pores in the cup (Fig. 1).  If the soil is not saturated, water will move from inside the cup into the unfilled soil pores.  Because air cannot replace the space vacated by the exiting water, a vacuum develops in the shaft of the tensiometer that can be measured with an accurate gauge.  Water will stop migrating from inside the tensiometer cup into the soil when the internal vacuum pressure of the tensiometer equals the soil tension, or the force needed to pull water from the soil pores.   The vacuum gauge measures tension in units of kPa or cbars..._
+### How the Capacitative Touch Soil Moisture Sensor works
+The Capacitative Touch Soil Moisture seems much more electronics/techie.  It is also the easiest to use within an automated system. [This article](https://www.switchdoc.com/2020/06/tutorial-capacitive-moisture-sensor-grove/) goes into detail how it works.
+### On To Calibration
+To calibrate, 
+
+A reading flow is started by sending an mqtt message, topic=PAR\READING_TAKE, message = PPFD reading from the mq-500 using the EasyMQTT app from an iPhone. In the example, the PPFD reading on the mq-500 was 250 μmol/m2/s.
+
+
 
 ## Saving Readings
 I have influxdb]= installed on the Growbuddy Raspberry Pi Server.
